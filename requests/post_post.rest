@@ -1,10 +1,9 @@
 POST http://localhost:3003/api/posts/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzc2plcmpvbWsiLCJpZCI6IjVkZTFiMGM4ZjFmZTZhNDcwYzgxYjNkNiIsImlhdCI6MTU3NTA3MjU2MH0.KY1i9eS2s3_qtQmykCJ2mTEk_fcpzU3e9a9Uk2k-hRE
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvcmlzc2plcmpvbWsiLCJpZCI6IjVkZTFiMGM4ZjFmZTZhNDcwYzgxYjNkNiIsImlhdCI6MTU3NTEyMTMzMX0.SP9hEVeib4UPLf25mUb_b_sSu54DUMFlsdIxK0XTZ_w
 
 {
-  "title": "hermannin elamam kerTa",
-  "author": "mina",
-  "url": "www.herman4.org",
+  "title": "Minun elamam kerta1!!..,,",
+  "text": "lorem ipsum....................................askdfnjmoaiknfmoiasenmfoaw",
   "likes": 0
 }

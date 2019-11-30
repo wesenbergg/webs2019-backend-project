@@ -5,8 +5,15 @@ const postSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  author: String,
-  url: {
+  date: {
+    type: String,
+    default: Date.now()
+  },
+  image_url: {
+    type: String,
+    default: 'https://images.unsplash.com/photo-1518214598173-1666bc921d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80'
+  },
+  text: {
     type: String,
     required: true
   },
@@ -25,4 +32,4 @@ postSchema.set('toJSON', {
   }
 })
 
-module.exports = mongoose.model('post', postSchema)
+module.exports = mongoose.model('Post', postSchema)

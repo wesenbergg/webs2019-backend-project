@@ -25,14 +25,25 @@ const userSchema = mongoose.Schema({
     required: true,
     default: 'writer'
   },
+  bio: {
+    type: String,
+    required: true,
+    default: 'nill'
+  },
   region: {
     type: String
   },
+  profile_url: {
+    type: String,
+    required: true,
+    default: 'https://i.stack.imgur.com/34AD2.jpg'
+  },
+  experience: String,
   passwordHash: String,
   posts: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'post'
+      ref: 'Post'
     }
   ]
 })

@@ -1,13 +1,13 @@
 const jwt = require('jsonwebtoken')
 const postRouter = require('express').Router()
 const User = require('../models/user')
-const post = require('../models/post')
+const Post = require('../models/post')
 
 postRouter.get('/', async (request, response, next) => {
-  try{
-    const posts = await post.find({}).populate('user', { posts: 0 })
+  try {
+    const posts = await Post.find({}).populate('user', { posts: 0 })
     response.json(posts.map(b => b.toJSON()))
-  }catch(exception){
+  } catch(exception ){
     next(exception)
   }
 })
@@ -22,10 +22,10 @@ postRouter.post('/', async (request, response, next) => {
 
     const user = await User.findById(decodedToken.id)
 
-    const newpost = new post({
+    const newpost = new Post({
       title: body.title,
-      author: body.author,
-      url: body.url,
+      text: body.text,
+      image_url: body.image_url,
       likes: body.likes || 0,
       user: user._id
     })
@@ -40,48 +40,33 @@ postRouter.post('/', async (request, response, next) => {
 })
 
 postRouter.put('/:id', async (req, res, next) => {
-  try{
-    let updatedpost = await post.findOneAndUpdate(
+  try {
+    let updatedpost = await Post.findOneAndUpdate(
       req.params.id,
-      { 
-        likes: req.body.likes
-      },
-      {
-        new: true 
-      })
+      { likes: req.body.likes },
+      {  new: true })
     res.json(updatedpost.toJSON())
-  }catch(e){
+  } catch(e) {
     next(e)
   }
 })
 
 postRouter.delete('/:id', async (request, response, next) => {
   try {
+    console.log(request.params.id)
     const decodedToken = jwt.verify(request.token, process.env.SECRET)
-    if (!request.token || !decodedToken.id) 
+    if(!request.token || !decodedToken.id) 
       return response.status(401).json({ error: 'token missing or invalid' })
 
     const user = await User.findById(decodedToken.id)
-    const post = await post.findById(request.params.id)
-    console.log(post.user)
+    const post = await Post.findById(request.params.id)
+    //console.log(post.user)
     if(user._id.toString() === post.user.toString()) {
-      await post.findByIdAndRemove(request.params.id)
+      await Post.findByIdAndRemove(request.params.id)
       response.status(204).end()
-    }/*
-
-
-
-
-
- //handle !(user._id.toString() === post.user.toString()) virheilmoitus
-
-
-
-
-
-    */
+    }
    
-  } catch (exception) {
+  } catch(exception) {
     next(exception)
   }
 })
