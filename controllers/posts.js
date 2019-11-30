@@ -1,18 +1,18 @@
 const jwt = require('jsonwebtoken')
-const blogRouter = require('express').Router()
+const postRouter = require('express').Router()
 const User = require('../models/user')
-const Blog = require('../models/blog')
+const post = require('../models/post')
 
-blogRouter.get('/', async (request, response, next) => {
+postRouter.get('/', async (request, response, next) => {
   try{
-    const blogs = await Blog.find({}).populate('user', { blogs: 0 })
-    response.json(blogs.map(b => b.toJSON()))
+    const posts = await post.find({}).populate('user', { posts: 0 })
+    response.json(posts.map(b => b.toJSON()))
   }catch(exception){
     next(exception)
   }
 })
 
-blogRouter.post('/', async (request, response, next) => {
+postRouter.post('/', async (request, response, next) => {
   let body = request.body
 
   try {
@@ -22,7 +22,7 @@ blogRouter.post('/', async (request, response, next) => {
 
     const user = await User.findById(decodedToken.id)
 
-    const newBlog = new Blog({
+    const newpost = new post({
       title: body.title,
       author: body.author,
       url: body.url,
@@ -30,18 +30,18 @@ blogRouter.post('/', async (request, response, next) => {
       user: user._id
     })
   
-    const savedBlog = await newBlog.save()
-    user.blogs = user.blogs.concat(savedBlog._id)
+    const savedpost = await newpost.save()
+    user.posts = user.posts.concat(savedpost._id)
     await user.save()
-    response.json(savedBlog.toJSON())
+    response.json(savedpost.toJSON())
   }catch(exception){
     next(exception)
   }
 })
 
-blogRouter.put('/:id', async (req, res, next) => {
+postRouter.put('/:id', async (req, res, next) => {
   try{
-    let updatedBlog = await Blog.findOneAndUpdate(
+    let updatedpost = await post.findOneAndUpdate(
       req.params.id,
       { 
         likes: req.body.likes
@@ -49,23 +49,23 @@ blogRouter.put('/:id', async (req, res, next) => {
       {
         new: true 
       })
-    res.json(updatedBlog.toJSON())
+    res.json(updatedpost.toJSON())
   }catch(e){
     next(e)
   }
 })
 
-blogRouter.delete('/:id', async (request, response, next) => {
+postRouter.delete('/:id', async (request, response, next) => {
   try {
     const decodedToken = jwt.verify(request.token, process.env.SECRET)
     if (!request.token || !decodedToken.id) 
       return response.status(401).json({ error: 'token missing or invalid' })
 
     const user = await User.findById(decodedToken.id)
-    const blog = await Blog.findById(request.params.id)
-    console.log(blog.user)
-    if(user._id.toString() === blog.user.toString()) {
-      await Blog.findByIdAndRemove(request.params.id)
+    const post = await post.findById(request.params.id)
+    console.log(post.user)
+    if(user._id.toString() === post.user.toString()) {
+      await post.findByIdAndRemove(request.params.id)
       response.status(204).end()
     }/*
 
@@ -73,7 +73,7 @@ blogRouter.delete('/:id', async (request, response, next) => {
 
 
 
- //handle !(user._id.toString() === blog.user.toString()) virheilmoitus
+ //handle !(user._id.toString() === post.user.toString()) virheilmoitus
 
 
 
@@ -86,4 +86,4 @@ blogRouter.delete('/:id', async (request, response, next) => {
   }
 })
 
-module.exports = blogRouter
+module.exports = postRouter

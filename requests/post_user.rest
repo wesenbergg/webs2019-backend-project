@@ -1,0 +1,12 @@
+POST http://localhost:3003/api/users/
+Content-Type: application/json
+
+{
+  "username": "borissjerjomk",
+  "name": "boriss",
+  "lastname": "jerjomkin",
+  "email": "boriss@metropolia.fi",
+  "role": "admin",
+  "region": "Europe",
+  "password": "1234"
+}

@@ -1,6 +1,6 @@
 const listHelper = require('../utils/list_helper')
 
-const listWithOneBlog = [
+const listWithOnepost = [
   {
     _id: '5a422aa71b54a676234d17f8',
     title: 'Go To Statement Considered Harmful',
@@ -11,7 +11,7 @@ const listWithOneBlog = [
   }
 ]
 
-const blogs = [
+const posts = [
   {
     _id: '5a422a851b54a676234d17f7',
     title: 'React patterns',
@@ -40,7 +40,7 @@ const blogs = [
     _id: '5a422b891b54a676234d17fa',
     title: 'First class tests',
     author: 'Robert C. Martin',
-    url: 'http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll',
+    url: 'http://post.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll',
     likes: 10,
     __v: 0
   },
@@ -48,7 +48,7 @@ const blogs = [
     _id: '5a422ba71b54a676234d17fb',
     title: 'TDD harms architecture',
     author: 'Robert C. Martin',
-    url: 'http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html',
+    url: 'http://post.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html',
     likes: 0,
     __v: 0
   },
@@ -56,41 +56,41 @@ const blogs = [
     _id: '5a422bc61b54a676234d17fc',
     title: 'Type wars',
     author: 'Robert C. Martin',
-    url: 'http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html',
+    url: 'http://post.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html',
     likes: 2,
     __v: 0
   }  
 ]
 
 test('dummy returns one', () => {
-  const blogs = []
+  const posts = []
 
-  const result = listHelper.dummy(blogs)
+  const result = listHelper.dummy(posts)
   expect(result).toBe(1)
 })
 
 describe('total likes', () => {
     
-  test('when list has only one blog equals the likes of that', () => {
-    const result = listHelper.totalLikes(listWithOneBlog)
+  test('when list has only one post equals the likes of that', () => {
+    const result = listHelper.totalLikes(listWithOnepost)
     expect(result).toBe(5)
   })
 
-  test('when list has many blogs equals the likes of that', () => {
-    const result = listHelper.totalLikes(blogs)
+  test('when list has many posts equals the likes of that', () => {
+    const result = listHelper.totalLikes(posts)
     expect(result).toBe(36)
   })
 })
 
-describe('favorite blog', () => {
+describe('favorite post', () => {
    
-  test('when list has none blog, equals the favorite of that', () => {
-    const result = listHelper.favoriteBlog([])
+  test('when list has none post, equals the favorite of that', () => {
+    const result = listHelper.favoritepost([])
     expect(result).toEqual({})
   })
 
-  test('when list has only one blog, equals the favorite of that', () => {
-    const result = listHelper.favoriteBlog(listWithOneBlog)
+  test('when list has only one post, equals the favorite of that', () => {
+    const result = listHelper.favoritepost(listWithOnepost)
     expect(result).toEqual({
       _id: '5a422aa71b54a676234d17f8',
       title: 'Go To Statement Considered Harmful',
@@ -101,8 +101,8 @@ describe('favorite blog', () => {
     })
   })
   
-  test('when list has many blogs equals, the favorite of that', () => {
-    const result = listHelper.favoriteBlog(blogs)
+  test('when list has many posts equals, the favorite of that', () => {
+    const result = listHelper.favoritepost(posts)
     expect(result).toEqual({
       _id: '5a422b3a1b54a676234d17f9',
       title: 'Canonical string reduction',
@@ -114,47 +114,47 @@ describe('favorite blog', () => {
   })
 })
 
-describe('most blogs', () => {
+describe('most posts', () => {
    
-  test('when list has none blog, equals the most blogs of that', () => {
-    const result = listHelper.mostBlogs([])
+  test('when list has none post, equals the most posts of that', () => {
+    const result = listHelper.mostposts([])
     expect(result).toEqual({})
   })
   
-  test('when list has only one blog, equals the most blogs of that', () => {
-    const result = listHelper.mostBlogs(listWithOneBlog)
+  test('when list has only one post, equals the most posts of that', () => {
+    const result = listHelper.mostposts(listWithOnepost)
     expect(result).toEqual({
       author: 'Edsger W. Dijkstra',
-      blogs: 1
+      posts: 1
     })
   })
     
-  test('when list has many blogs equals, the most blogs of that', () => {
-    const result = listHelper.mostBlogs(blogs)
+  test('when list has many posts equals, the most posts of that', () => {
+    const result = listHelper.mostposts(posts)
     expect(result).toEqual({
       author: 'Robert C. Martin',
-      blogs: 3
+      posts: 3
     })
   })
 })
 
-describe('most likes by blogger', () => {
+describe('most likes by postger', () => {
    
-  test('when list has none blog, equals the most likes of that', () => {
+  test('when list has none post, equals the most likes of that', () => {
     const result = listHelper.mostLikes([])
     expect(result).toEqual({})
   })
     
-  test('when list has only one blog, equals the most likes of that', () => {
-    const result = listHelper.mostLikes(listWithOneBlog)
+  test('when list has only one post, equals the most likes of that', () => {
+    const result = listHelper.mostLikes(listWithOnepost)
     expect(result).toEqual({
       author: 'Edsger W. Dijkstra',
       likes: 5
     })
   })
       
-  test('when list has many blogs equals, the most likes of that', () => {
-    const result = listHelper.mostLikes(blogs)
+  test('when list has many posts equals, the most likes of that', () => {
+    const result = listHelper.mostLikes(posts)
     expect(result).toEqual({
       author: 'Edsger W. Dijkstra',
       likes: 17
