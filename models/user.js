@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema({
     required: true,
     unique: true
   },
-  name: {
+  firstname: {
     type: String,
     required: true
   },
@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
     required: true,
     default: 'writer'
   },
-  bio: {
+  description: {
     type: String,
     required: true,
     default: 'nill'
@@ -33,7 +33,7 @@ const userSchema = mongoose.Schema({
   region: {
     type: String
   },
-  profile_url: {
+  profilepic: {
     type: String,
     required: true,
     default: 'https://i.stack.imgur.com/34AD2.jpg'

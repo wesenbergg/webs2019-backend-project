@@ -9,9 +9,9 @@ const postSchema = mongoose.Schema({
     type: String,
     default: Date.now()
   },
-  image_url: {
+  image: {
     type: String,
-    default: 'https://images.unsplash.com/photo-1518214598173-1666bc921d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80'
+    default: ''
   },
   text: {
     type: String,
@@ -31,5 +31,5 @@ postSchema.set('toJSON', {
     delete returnedObject.__v
   }
 })
-
+//https://images.unsplash.com/photo-1518214598173-1666bc921d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80
 module.exports = mongoose.model('Post', postSchema)

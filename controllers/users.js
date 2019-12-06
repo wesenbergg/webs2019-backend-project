@@ -23,7 +23,7 @@ userRouter.post('/', async (request, response, next) => {
 
     const user = new User({
       username: body.username,
-      name: body.name,
+      firstname: body.firstname,
       lastname: body.lastname,
       email: body.email,
       region: body.region,
@@ -36,6 +36,26 @@ userRouter.post('/', async (request, response, next) => {
     response.json(savedUser)
   } catch (exception) {
     next(exception)
+  }
+})
+
+userRouter.put('/:id', async (req, res, next) => {
+  //console.log(req.body.id)
+  try {
+    let updatedUser = await User.findByIdAndUpdate(
+      req.body.id,
+      { firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
+        email: req.body.email,
+        description: req.body.description,
+        region: req.body.region,
+        profilepic: req.body.profilepic
+      },
+      {  new: true })
+    res.json(updatedUser.toJSON())
+  } catch(e) {
+    next(e)
   }
 })
 

@@ -1,0 +1,15 @@
+PUT http://localhost:3003/api/users/5dea6d9c8c0db238d84115ad
+Content-Type: application/json
+
+{
+"role": "admin",
+"description": "nill",
+"profilepic": "https://i.stack.imgur.com/34AD2.jpg",
+"posts": [ ],
+"username": "borissj",
+"firstname": "boriss",
+"lastname": "jerjomkin",
+"email": "boriss@metropolia.fi",
+"region": "Europe",
+"id": "5dea6d9c8c0db238d84115ad"
+}

@@ -3,9 +3,21 @@ const postRouter = require('express').Router()
 const User = require('../models/user')
 const Post = require('../models/post')
 
+postRouter.get('/:id', async (request, response, next) => {
+  
+  try {
+    const post = await Post.findById(request.params.id)
+    post ? response.json(post.toJSON()): response.status(204).end()
+  } catch(exception ){
+    next(exception)
+  }
+})
+
 postRouter.get('/', async (request, response, next) => {
+  //console.log(request.body)
   try {
     const posts = await Post.find({}).populate('user', { posts: 0 })
+    console.log(posts)
     response.json(posts.map(b => b.toJSON()))
   } catch(exception ){
     next(exception)
@@ -25,7 +37,7 @@ postRouter.post('/', async (request, response, next) => {
     const newpost = new Post({
       title: body.title,
       text: body.text,
-      image_url: body.image_url,
+      image: body.image,
       likes: body.likes || 0,
       user: user._id
     })
