@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema({
   },
   date: {
     type: String,
-    default: Date.now()
+    default: new Date().toJSON().slice(0,10).replace(/-/g,'/')
   },
   image: {
     type: String,

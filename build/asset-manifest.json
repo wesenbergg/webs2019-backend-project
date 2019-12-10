@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.65b48cc3.chunk.css",
-    "main.js": "/static/js/main.ec7b6eb8.chunk.js",
-    "main.js.map": "/static/js/main.ec7b6eb8.chunk.js.map",
+    "main.css": "/static/css/main.caee1f6a.chunk.css",
+    "main.js": "/static/js/main.5cf03b23.chunk.js",
+    "main.js.map": "/static/js/main.5cf03b23.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.1eefa857.js",
     "runtime-main.js.map": "/static/js/runtime-main.1eefa857.js.map",
-    "static/js/2.666be67b.chunk.js": "/static/js/2.666be67b.chunk.js",
-    "static/js/2.666be67b.chunk.js.map": "/static/js/2.666be67b.chunk.js.map",
+    "static/js/2.8c8f7679.chunk.js": "/static/js/2.8c8f7679.chunk.js",
+    "static/js/2.8c8f7679.chunk.js.map": "/static/js/2.8c8f7679.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1b814afd89f49db2ee7682f10090df22.js": "/precache-manifest.1b814afd89f49db2ee7682f10090df22.js",
+    "precache-manifest.5ea9865d61ef070051264613d21bdf52.js": "/precache-manifest.5ea9865d61ef070051264613d21bdf52.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.65b48cc3.chunk.css.map": "/static/css/main.65b48cc3.chunk.css.map",
+    "static/css/main.caee1f6a.chunk.css.map": "/static/css/main.caee1f6a.chunk.css.map",
     "static/media/Faq.css": "/static/media/Sieppaa.61413a81.PNG"
   },
   "entrypoints": [
     "static/js/runtime-main.1eefa857.js",
-    "static/js/2.666be67b.chunk.js",
-    "static/css/main.65b48cc3.chunk.css",
-    "static/js/main.ec7b6eb8.chunk.js"
+    "static/js/2.8c8f7679.chunk.js",
+    "static/css/main.caee1f6a.chunk.css",
+    "static/js/main.5cf03b23.chunk.js"
   ]
 }
