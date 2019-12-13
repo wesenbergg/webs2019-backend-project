@@ -1,4 +1,4 @@
-# Web Projekti 2019 syksy - Sosiaalinen media urheilullisille ihmisille
+# Web Projekti 2019 syksy - Sosiaalinen media urheilullisille ihmisille V.1.0
 
 **Sisällys**
 1. Johdanto
@@ -8,7 +8,6 @@
 5. JSON-objektien skeemat
 6. Kuvankaappaukset (projektista)
 7. Jatkokehitysideat
-8. Muuta
 
 ____________
 
@@ -57,7 +56,7 @@ Taulukon osoitteet esitetään muodossa */api/posts/:id*. Esimerkiksi osoite htt
 - *Base url*: https://stayfit-app.herokuapp.com (ei kirjoiteta taulukkoon).
 - Staattinen osa URL:lää: */api/posts* (kirjoitetaan aina samalla tavalla, eivät muutu).
 - Dynaaminen osa URL:lää: */:id* (voi olla mikä tahansa kirjainmerkki yhdistelmä). URL esimerkissä 
-```id = 5dea9ce77f2ea513d8c02d48.```
+```id = 5dea9ce77f2ea513d8c02d48.```\
 
 **Käyttäjä (user)**\
 *base URL*: https://stayfit-app.herokuapp.com tai http://localhost3003
@@ -103,6 +102,11 @@ Routet palauttava index.html tiedoston.
 |GET|/posts|Renderöi viimeisimmät tilapäivitykset.|
 |GET|/posts/p/:id|Renderöi yksittäinen tilapäivitys|
 |GET|/posts/new|Renderöi uuden päivityksen lomake|
+
+[Esimerkkejä pyyntöjen rungoista](https://github.com/wesenbergg/webs2019-backend-project/tree/master/requests)\
+[Esimerkki GET api/users vastauksesta](https://stayfit-app.herokuapp.com/api/users)\
+[Esimerkki GET api/posts vastauksesta](https://stayfit-app.herokuapp.com/api/posts)\
+[Esimerkki GET api/posts/:id vastauksesta](https://stayfit-app.herokuapp.com/api/posts/5dea9ce77f2ea513d8c02d48)
 ____________
 
 **5. JSON-objektien skeemat**
@@ -126,7 +130,4 @@ _____
 - Käyttäjien välinen interaktio, kuten muiden henkilöiden seuraaminen, ystävälista ja viestien lähettäminen muille käyttäjille ovat jatkokehitysideoita.
 - Laajennuksena postauksia voisi ryhmitellä eri urheilulajeihin
 - käyttäjä voi kuvailla kuntosalitreenin yksityiskohtaisemmin valitsemalla mitä liikkeitä suoritti, millä painoilla sekä toistojen ja sarjojen lukumäärät.
-_____
-**8. Muuta**
-
 _____
