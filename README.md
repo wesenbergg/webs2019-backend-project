@@ -113,7 +113,7 @@ __**5. JSON-objektien skeemat**__\
 * Postaus (post)\
 ![Post schema](https://i.imgur.com/qrPDJvA.png)\
 *Tilapäivityksen skeema (kuva 1).*\
-* Käyttäjä (user)\
+* Käyttäjä (user)
 ![UserScema](https://i.imgur.com/8dHFUTF.png)\
 *Käyttäjän skeema (kuva 2).*
 _______
