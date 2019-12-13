@@ -110,11 +110,11 @@ Routet palauttava index.html tiedoston.
 ____________
 
 **5. JSON-objektien skeemat**
-- Postaus (post)
-![Post schema](https://i.imgur.com/qrPDJvA.png)
+- Postaus (post)\
+![Post schema](https://i.imgur.com/qrPDJvA.png)\
 *Tilapäivityksen skeema (kuva 1).*
-- Käyttäjä (user)
-![UserScema](https://i.imgur.com/8dHFUTF.png)
+- Käyttäjä (user)\
+![UserScema](https://i.imgur.com/8dHFUTF.png)\
 *Käyttäjän skeema (kuva 2).*
 _______
 **6. Kuvankaappaukset (projektista)**\
