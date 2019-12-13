@@ -109,7 +109,7 @@ Routet palauttava index.html tiedoston.
 [Esimerkki GET api/posts/:id vastauksesta](https://stayfit-app.herokuapp.com/api/posts/5dea9ce77f2ea513d8c02d48)
 ____________
 
-__**5. JSON-objektien skeemat**__\
+__**5. JSON-objektien skeemat**__
 * Postaus (post)\
 ![Post schema](https://i.imgur.com/qrPDJvA.png)\
 *Tilapäivityksen skeema (kuva 1).*
